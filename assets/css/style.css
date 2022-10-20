@@ -1,0 +1,503 @@
+html {
+  scroll-behavior: smooth;
+}
+/* ICON */
+
+.material-symbols-outlined.md-24 {
+  font-size: 24px;
+}
+
+.material-symbols-outlined.md-36 {
+  font-size: 36px;
+}
+
+.material-symbols-outlined.md-48 {
+  font-size: 48px;
+}
+
+.material-symbols-outlined.md-150 {
+  font-size: 150px;
+}
+
+body {
+  background: url(../images/wp.jpg) no-repeat center center fixed;
+}
+
+nav {
+  background: rgba(255, 255, 255, 0.56);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.7px);
+  -webkit-backdrop-filter: blur(4.7px);
+  padding: 2px;
+  color: rgb(0, 0, 0);
+  border-radius: 0 0 50px 50px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+main {
+  margin-top: 200px;
+}
+
+.logo {
+  font-size: 2em;
+  font-weight: 700;
+  text-align: center;
+  margin: 30px;
+}
+
+/* INPUT */
+.input {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.input-unread,
+.input-read,
+.input-add {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.23);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.6px);
+  -webkit-backdrop-filter: blur(4.6px);
+
+  backdrop-filter: blur(5px);
+  width: 25%;
+  height: 100px;
+  border-radius: 20px;
+}
+
+.input-unread {
+  margin: 30px 15px 15px 30px;
+}
+
+.input-read {
+  margin: 30px 15px;
+}
+
+.input-add {
+  margin: 30px 30px 15px 15px;
+}
+
+.input-add:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 0.5rem 0.3rem rgba(21, 228, 55, 0.478);
+}
+
+.input-content {
+  display: flex;
+  flex-direction: column;
+}
+#totalUnreadBook {
+  font-size: larger;
+}
+#totalReadBook {
+  font-size: larger;
+}
+
+.input-read-btn,
+.input-unread-btn,
+.input-add-btn {
+  width: 55px;
+  height: 55px;
+  border: none;
+  outline: none;
+  background-color: white;
+  border-radius: 30%;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.input-read-btn {
+  background: rgba(30, 129, 160, 0.49);
+
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.6px);
+  -webkit-backdrop-filter: blur(4.6px);
+}
+
+.input-unread-btn {
+  background-color: #f0dd5d;
+}
+
+.input-add-btn {
+  background-color: #81bf97;
+}
+
+@media screen and (max-width: 992px) {
+  .input {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input-unread,
+  .input-read,
+  .input-add {
+    width: 80%;
+  }
+
+  .input-unread {
+    margin: 30px 0 15px 0;
+  }
+
+  .input-read {
+    margin: 15px 0;
+  }
+
+  .input-add {
+    margin: 15px 0 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .input {
+    flex-direction: column;
+  }
+
+  .input-unread,
+  .input-read,
+  .input-add {
+    width: 80%;
+  }
+
+  .input-unread {
+    margin: 30px 0 15px 0;
+  }
+
+  .input-read {
+    margin: 15px 0;
+  }
+
+  .input-add {
+    margin: 15px 0 15px;
+  }
+}
+
+/* OVERLAY FORM */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+  background-color: #ffffff77;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  z-index: 2;
+  opacity: 1;
+  animation: show 0.2s;
+
+  transform: scale(1);
+}
+@keyframes show {
+  from {
+    transform: scale(0);
+    opacity: 0;
+    z-index: -1;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+    z-index: 2;
+  }
+  /* transform: scale(1.1); */
+}
+
+#closeForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  outline: none;
+  background-color: #f91d00;
+  border-radius: 30%;
+  cursor: pointer;
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.56);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.7px);
+  -webkit-backdrop-filter: blur(4.7px);
+  border: 1px solid rgba(255, 255, 255, 1);
+  width: 35%;
+
+  border-radius: 20px;
+  box-shadow: 0 0 10px #0000001a;
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 992px) {
+  .close-btn {
+    top: 15px;
+    right: 15px;
+  }
+
+  .input-form {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .close-btn {
+    top: 15px;
+    right: 15px;
+  }
+
+  .input-form {
+    width: 80%;
+  }
+}
+
+.input-form h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 20px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+}
+
+form input {
+  width: 100%;
+  height: 65px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.42);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.7px);
+  -webkit-backdrop-filter: blur(4.7px);
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 20px;
+  font-size: 1em;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.input-inline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.input-inline input {
+  width: 4.5%;
+  height: 100%;
+  margin: 0 10px 0 0;
+  cursor: pointer;
+}
+
+form button {
+  border: none;
+  outline: none;
+  background-color: #3c07f9;
+  font-size: 1em;
+  display: block;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  margin: 10px 0 25px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  transition: all 400ms ease;
+}
+
+form button:hover {
+  background-color: #5df060;
+  color: black;
+}
+
+/* CONTENT */
+
+#content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bookshelf-unread,
+.bookshelf-read {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.23);
+
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.6px);
+  -webkit-backdrop-filter: blur(4.6px);
+
+  box-shadow: 0 0 10px #0000001a;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+}
+
+.bookshelf-unread {
+  margin: 0 auto 0;
+}
+
+.bookshelf-read {
+  margin: 30px auto 30px;
+}
+
+@media screen and (max-width: 992px) {
+  .bookshelf-unread,
+  .bookshelf-read {
+    align-items: center;
+  }
+
+  .book-list {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #content {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .bookshelf-unread,
+  .bookshelf-read {
+    width: 80%;
+    margin: 20px;
+  }
+
+  .book-list {
+    justify-content: center;
+  }
+}
+
+.bookshelf-unread h2,
+.bookshelf-read h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 30px;
+}
+
+.book-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  /* width: 100%; */
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 20px;
+  width: 200px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.32);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11.3px);
+  -webkit-backdrop-filter: blur(11.3px);
+  border: 1px solid rgba(255, 255, 255, 1);
+  margin-bottom: 30px;
+}
+
+.book-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.book-img img {
+  width: 200px;
+  height: 200px;
+  transition: 0.5s ease-in-out;
+}
+
+.book-img:hover img {
+  transform: scale(1.2);
+}
+
+.book-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+  /* margin: 10px 30px; */
+  /* padding: 10px 0 10px; */
+}
+
+.book-content h3,
+.book-content p {
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+.book-action {
+  margin-top: 10px;
+  /* margin: 10px 0 0 10px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.unread-btn,
+.read-btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 5px 35px;
+  border-radius: 10px;
+}
+
+.unread-btn {
+  background-color: #f0dd5d;
+}
+
+.read-btn {
+  background-color: #25c974;
+}
+
+.remove-btn {
+  background-color: #df6756;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
